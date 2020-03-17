@@ -10,7 +10,7 @@ def pytest_addoption(parser):
 
 
 @pytest.fixture(scope='function')
-def browser(request):
+def browser(request) -> webdriver:
     # получаем значение опции --language
     lang = request.config.getoption('language')
     # создаем объект с опциями
