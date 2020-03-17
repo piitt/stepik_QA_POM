@@ -11,7 +11,8 @@ class MainPage(BasePage):
         login_link.click()
         # переход между страницами
         # инициализируем объект страницы с логином и возвращаем его
-        # 1 способ return LoginPage(browser=self.browser, url=self.browser.current_url)
+        # 1 способ
+        # return LoginPage(browser=self.browser, url=self.browser.current_url)
 
     def should_be_login_link(self):
         assert self.is_element_present(*MainPageLocators.LOGIN_LINK), 'Login link is not presented'
