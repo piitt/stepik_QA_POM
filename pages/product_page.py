@@ -21,8 +21,9 @@ class ProductPage(BasePage):
 
     def should_be_product_tile_present(self):
         title_alertinner = self.browser.find_element_by_class_name('alertinner').text.strip()
-        assert self.get_product_tite() in title_alertinner
+        assert title_alertinner == f'{self.get_product_tite()} has been added to your basket.'
+
 
     def should_be_product_price_present(self):
         price_alertinner = self.browser.find_element_by_css_selector('.alertinner > p').text.strip()
-        assert self.get_product_price() in price_alertinner
+        assert price_alertinner == f'Your basket total is now {self.get_product_price()}'
